@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="blog">
+
+	<insert id="insert" parameterType = "hashmap">
+	<![CDATA[INSERT INTO blog VALUES (null, #{title}, null, #{user_id})]]>
+		<selectKey keyProperty="blog_id" resultType="long" order="AFTER">
+			select LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<select id="getBlogByEmail" resultType="blogvo" parameterType = "String">
+		<![CDATA[
+		select blog_id, title, logo, user_id from blog where user_id = (select user_id from user where email = #{email});
+		]]>
+	</select>
+
+	<update id="updateLogo" parameterType="String">
+	<![CDATA[update blog set name =#{name}, email = #{email}, passwd = password(#{password}),gender =#{gender} where no =#{no}]]>
+	</update>	
+	
+</mapper>
+

@@ -1,0 +1,14 @@
+package com.estsoft.jblog.annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.METHOD) //Auth가 붙을 type은 method!
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Auth {
+	String value() default "user";
+	boolean required() default true;
+
+}
