@@ -44,8 +44,6 @@ public class BlogController {
 	@RequestMapping(value = "/uploadLogo", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> uploadLogo(MultipartHttpServletRequest request){
-		//추가해줄것!
-		//service.updateLogo(logoaddr);
 		
 		Iterator<String> itr = request.getFileNames();
 		String filename = null;
@@ -53,11 +51,15 @@ public class BlogController {
 		if(itr.hasNext()){
 			//fileUpload
 			MultipartFile mpf = request.getFile(itr.next());
-			filename = fileUploader.upload(mpf);			
+			filename = fileUploader.upload(mpf);		
+			String filePath = "/logo-images/"+filename;
+			
+			//upload database
+			service.updateLogo(blog_id, filePath);
 			
 			//return map
 			map.put("result", "success");
-			map.put("data", "/logo-images/"+filename);	
+			map.put("data", filePath);	
 			return map;
 		}else{	
 		return map;

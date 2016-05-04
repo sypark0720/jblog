@@ -17,7 +17,7 @@ $(function(){
 		var form = new FormData(document.getElementById('uploadForm'));
 		if (form == ""){ return; }
 		$.ajax({
-			url:"${pageContext.request.contextPath}/blog/uploadLogo/", 
+			url:"${pageContext.request.contextPath}/blog/uploadLogo", 
 			data: form,
 			dataType: 'json',
 			processData: false,
