@@ -17,7 +17,7 @@ $(function(){
 		var form = new FormData(document.getElementById('uploadForm'));
 		if (form == ""){ return; }
 		$.ajax({
-			url:"${pageContext.request.contextPath}/blog/uploadLogo", 
+			url:"${pageContext.request.contextPath}/blog/${authUser.email}/uploadLogo", 
 			data: form,
 			dataType: 'json',
 			processData: false,
@@ -44,18 +44,19 @@ $(function(){
 			<div id="content" class="full-screen">
 				<ul class="admin-menu">
 					<li class="selected">기본설정</li>
-					<li><a href="${pageContext.request.contextPath}/blog/admin-cetegory">카테고리</a></li>
-					<li><a href="${pageContext.request.contextPath}/blog/admin-write">글작성</a></li>
+					<li><a href="${pageContext.request.contextPath}/blog/${authUser.email}/admin-category">카테고리</a></li>
+					<li><a href="${pageContext.request.contextPath}/blog/${authUser.email}/admin-write">글작성</a></li>
 				</ul>
-				<form id = "uploadForm" enctype = "multipart/form-data" action="${pageContext.request.contextPath}/blog/admin-basic-submit" method="post">
+				<form id = "uploadForm" enctype = "multipart/form-data" action="${pageContext.request.contextPath}/blog/${authUser.email}/admin-basic-submit" method="post">
+	 		      	<input type="hidden" name="blog_id" value="${authUserBlog.blog_id}">
 	 		      	<table class="admin-config">
 			      		<tr>
 			      			<td class="t">블로그 제목</td>
-			      			<td><input type="text" size="40" name="title"></td>
+			      			<td><input type="text" size="40" name="title" value = "${authUserBlog.title}"></td>
 			      		</tr>
 			      		<tr>
 			      			<td class="t">로고이미지</td>
-			      			<td><img id="img-logoshow" src="${pageContext.request.contextPath}/assets/images/spring-logo.jpg"></td>      			
+			      			<td><img id="img-logoshow" src="${pageContext.request.contextPath}/${authUserBlog.logo}"></td>      			
 			      		</tr>      		
 			      		<tr>
 			      			<td class="t">&nbsp;</td>

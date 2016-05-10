@@ -9,13 +9,13 @@
 	<h1 class="logo">JBlog</h1>
 	<ul class="menu">
 		<c:choose>
-			<c:when test="${authUser == null }">
-				<li><a href="${pageContext.request.contextPath}/user/loginform">로그인</a></li>
-				<li><a href="${pageContext.request.contextPath}/user/joinform">회원가입</a></li>
+			<c:when test="${authUser == null}">
+				<li><a href="${pageContext.request.contextPath}/user/loginform">login</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/joinform">sign-up</a></li>
 			</c:when>
 			<c:otherwise>
 				<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
-				<li><a href="${pageContext.request.contextPath}/blog/${authUser.email}">내블로그</a></li>
+				<li><a href="${pageContext.request.contextPath}/blog/${authUser.email}?sel=0">내블로그</a></li>
 			</c:otherwise>
 		</c:choose>
 	</ul>

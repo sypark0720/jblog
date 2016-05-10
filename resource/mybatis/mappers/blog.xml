@@ -16,9 +16,45 @@
 		]]>
 	</select>
 
-	<update id="updateLogo" parameterType="String">
-	<![CDATA[update blog set name =#{name}, email = #{email}, passwd = password(#{password}),gender =#{gender} where no =#{no}]]>
+	<update id="updateLogo" parameterType="hashmap">
+	<![CDATA[update blog set logo=#{filePath} where blog_id =#{blog_id}]]>
 	</update>	
+	
+	<update id="updateTitle" parameterType="hashmap">
+	<![CDATA[update blog set title=#{title} where blog_id =#{blog_id}]]>
+	</update>	
+	
+	
+	<select id="selectCategoryList" resultType="categoryvo" parameterType = "long">
+		<![CDATA[
+		select * from category where blog_id = #{blog_id} ORDER BY category_name ]]>
+	</select>
+		
+	<insert id="insertCategory" parameterType = "hashmap">
+	<![CDATA[INSERT INTO category VALUES (null, #{name}, #{description}, 0, #{blog_id})]]>
+		<selectKey keyProperty="category_id" resultType="long" order="AFTER">
+			select LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<select id="getCategoryById" resultType="categoryvo" parameterType = "long">
+		<![CDATA[
+		select * from category where category_id = #{category_id};
+		]]>
+	</select>
+		
+	<delete id="deleteCategory" parameterType = "long">
+		delete FROM category where category_id = #{category_id}
+	</delete>	
+	
+	<insert id="insertPost" parameterType = "hashmap">
+	<![CDATA[INSERT INTO post VALUES (null, #{title}, #{content}, now(), #{category_id})]]>
+	</insert>
+	
+		<select id="selectPost" resultType="postvo" parameterType = "long">
+		<![CDATA[
+		select * from post where category_id = #{category_id} ORDER BY regdate DESC ]]>
+	</select>
 	
 </mapper>
 

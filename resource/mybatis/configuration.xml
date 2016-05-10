@@ -4,6 +4,9 @@
 	<typeAliases>
 	<typeAlias type = "com.estsoft.jblog.vo.UserVo" alias = "uservo"/>
 	<typeAlias type = "com.estsoft.jblog.vo.BlogVo" alias = "blogvo"/>
+	<typeAlias type = "com.estsoft.jblog.vo.CategoryVo" alias = "categoryvo"/>
+	<typeAlias type = "com.estsoft.jblog.vo.PostVo" alias = "postvo"/>
+	
     	</typeAliases>	
 	<mappers>
 		<mapper resource="mybatis/mappers/user.xml" />

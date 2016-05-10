@@ -37,8 +37,9 @@
 		<mvc:argument-resolvers>
 			<bean
 				class="com.estsoft.jblog.resolver.AuthUserHandlerMethodArgumentResolver" />
+			<bean
+				class="com.estsoft.jblog.resolver.AuthUserBlogHandlerMethodArgumentResolver" />
 		</mvc:argument-resolvers>
-
 
 	</mvc:annotation-driven>
 
@@ -71,7 +72,7 @@
 			<mvc:mapping path="/user/logout" />
 			<bean class="com.estsoft.jblog.interceptor.AuthLogoutInterceptor" />
 		</mvc:interceptor>
-
+		
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/assets/**" />  <!-- 얘네들은 interceptor를 통하지 않아도 되니까 -->
