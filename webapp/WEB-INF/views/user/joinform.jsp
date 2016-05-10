@@ -62,7 +62,7 @@ $(function(){
 
 		<form class="join-form" id="join-form" method="post"
 			action="${pageContext.request.contextPath}/user/join">
-			<label class="block-label" for="name">이름</label> <input id="name"
+			<label class="block-label" for="name">name</label> <input id="name"
 				name="user_name" type="text" value="${vo.user_name}"> <br />
 			<spring:hasBindErrors name="userVo">
 				<c:if test="${errors.hasFieldErrors('user_name') }">
@@ -76,7 +76,7 @@ $(function(){
 
 			<label class="block-label" for="blog-id">Email</label> 
 			<input id="blog-id" name="email" type="text" value = "${vo.email}"> 
-			<input id="btn-checkemail" type="button" value="email 중복체크"> 
+			<input id="btn-checkemail" type="button" value="valication check"> 
 			<img id="img-checkemail" style="display: none;" src="${pageContext.request.contextPath}/assets/images/check.png">
 			<br />
 			<spring:hasBindErrors name="userVo">
@@ -89,7 +89,7 @@ $(function(){
 				</c:if>
 			</spring:hasBindErrors>
 
-			<label class="block-label" for="password">패스워드</label> <input
+			<label class="block-label" for="password">Password</label> <input
 				id="password" name="password" type="password" /> <br />
 			<spring:hasBindErrors name="userVo">
 				<c:if test="${errors.hasFieldErrors('password') }">
@@ -107,7 +107,7 @@ $(function(){
 				<label class="l-float">서비스 약관에 동의합니다.</label>
 			</fieldset>
 
-			<input type="submit" value="가입하기">
+			<input type="submit" value="sign up">
 
 		</form>
 	</div>

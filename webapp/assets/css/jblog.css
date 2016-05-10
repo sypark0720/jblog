@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 /* reset */
 *				{ margin:0; padding:0 }
 body			{ font:0.75em "맑은 고딕", 돋움, 굴림; text-align:center; color:#111 }
@@ -10,35 +10,42 @@ a:visited 		{ color:#696969F; text-decoration:none; font-weight:bold; }
 a:active 		{ color:#696969; text-decoration:none; font-weight:bold; }
 a:hover 		{ color:#dc143c; text-decoration:none; font-weight:bold; } 
 
+<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 
+.center-content	{ width:500px; margin:120px auto 50px auto; font-family: 'Poiret One', cursive;}
 
-.center-content	{ width:500px; margin:120px auto 50px auto}
-
-.center-content .logo							{ width:565px; height:366px; background:url(/jblog/assets/images/logo.jpg) 0 0 no-repeat; margin-left:-125px; margin-top:-100px; text-indent:-100000px; font-size:0 }
+.center-content .logo							{ width:600px; height:389px; background:url(/jblog/assets/images/logo.jpg) 0 0 no-repeat; margin:40px auto 0px auto;  text-indent:-100000px; font-size:0 }
 .center-content .menu							{ text-align:center; height:20px; margin:0 auto }
 .center-content .menu li						{ display:inline; padding-left:20px }
 .center-content .menu li:first-child			{ margin!-left:70px }
-.center-content .menu li a						{ font-family: "cooper black", serif; font-size: 2em}
+.center-content .menu li a						{ font-family: 'Poiret One', cursive; font-size:3em; color:#775002;}
 
 
 .center-content form,
-.center-content .welcome-message				{ clear:both; margin:50px auto; }
+.center-content .welcome-message				{ clear:both; margin:3% auto; }
 .search-form 									{ width:100%; }
-.search-form input[name='keyword']				{ width:350px; border:3px solid #3879D9; padding:3px }
-.search-form fieldset							{ margin:10px 0}
-.search-form input[name='which']				{ display:inline-block; margin-left:10px;}
+.search-form input[name='keyword']				{ width:350px; border:3px solid #E28B02; padding:3px;}
+.search-form input[type="submit"]				{ font-family: 'Poiret One'; font-weight:bold;}
 
-.login-form										{ width:250px; padding:10px; border:1px solid #bbb;	}
+.search-form fieldset							{ margin:15px -20px 0px 0px; font-family: 'Poiret One', cursive; font-size: 1.8em; }
+.search-form input[name='which']				{ display:inline-block; margin-left:10px; font-family: 'Poiret One', cursive;}
+
+.login-form										{ width:250px; padding:10px; border:1px solid #bbb; 	}
 .login-form input, .login-form label			{ display:block }
-.login-form label								{ text-align:left; color:#555; margin-bottom:2px; font-weight:bold; }
+.login-form label								{ font-family: 'Poiret One'; font-size:1.5em; text-align:left; color:#555; margin-bottom:2px; font-weight:bold; }
 .login-form input[type='text']					{ margin-bottom:10px; width:230px; padding:5px }
+.login-form input[type='password']				{ margin-bottom:0px; width:230px; padding:5px }
+.login-form input[type="submit"]				{ font-family: 'Poiret One', "맑은 고딕"; font-weight:bold; display:block; font-size:1.2em; width:80px; height: 25px; margin:5px auto; }
 
 .join-form										{ text-align:left; width:250px; padding:10px; border:1px solid #bbb; }
-.join-form label, .join-form fieldset legend	{ color:#555; margin-bottom:2px; font-weight:bold; }
+.join-form label								{ font-family: 'Poiret One', "맑은 고딕"; font-size: 1.5em; color:#555; margin-bottom:5px; font-weight:bold; }
 .join-form .block-label 						{ display:block }
 .join-form label, .join-form fieldset			{ margin:10px 0 5px 0 }
+.join-form fieldset legend						{ font-family: 'Poiret One', "맑은 고딕"; font-size: 1em; margin-bottom: 5px}
+.join-form .l-float								{ font-family: 'Poiret One', "맑은 고딕"; font-size: 1em; margin-bottom: 5px }
+.join-form input[type="submit"]					{ font-family: 'Poiret One', "맑은 고딕"; font-weight:bold; display:block; font-size:1.2em; font-weight:bold; display:block; font-size:1.3em; width:80px; height: 27px; margin:5px auto; }
+				
 
-.join-form input[type="submit"]					{ display:block; width:80px; margin:20px auto }
 
 .welcome-message								{ height: 200px }
 .welcome-message span							{ font-size:1.2em; font-wight:bold; color:#777 }
@@ -48,7 +55,7 @@ a:hover 		{ color:#dc143c; text-decoration:none; font-weight:bold; }
 
 
 div#container				{ width:920px; margin:0 auto }
-div#header					{ height:120px; background: #5394CC;  }
+div#header					{ height:120px; background: #E28B02;  }
 div#content					{ float:left; width:720px; min-height:220px }
 div#content.full-screen		{ float:none; width:920px;}
 div#navigation				{ float:right; width:200px }
@@ -56,10 +63,10 @@ div#extra					{ float:right; clear:right; width:200px }
 div#footer					{ clear:both; width:100% }
 
 /* header */
-div#header h1		{ text-align:center; line-height:100px; margin:0; color:#fff }
+div#header h1		{ font-family: 'Poiret One', "맑은 고딕"; font-size: 4em; text-align:center; line-height:100px; margin:0; color:#fff }
 div#header ul		{ height:20px } 
-div#header li		{ float:right; margin-right:10px; }
-div#header li a 	{ color:#fff; font-weight:bold; text-decoration:none; }
+div#header li		{ float:right; margin-right:20px; margin-bottom:20px;}
+div#header li a 	{ font-family: 'Poiret One', "맑은 고딕"; font-size: 1.5em; color:#fff; font-weight:bold; text-decoration:none;   }
 
 #header h1 a:hover	 { color:#79B30B; text-decoration:none  }
 #header h1 a:link	 { color:#79B30B; text-decoration:none  }

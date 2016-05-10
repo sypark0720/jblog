@@ -15,12 +15,12 @@
 		<form class="search-form">
 			<fieldset>
 				<input type="text" name="keyword" />
-				<input type="submit" value="검색" />
+				<input type="submit" value="search" />
 			</fieldset>
 			<fieldset>
-				<input type="radio" name="which" value="blog-title"> <label>블로그 제목</label>
-				<input type="radio" name="which" value="tag"> <label>태그</label>
-				<input type="radio" name="which" value="blog-user"> <label>블로거</label>
+				<input type="radio" name="which" value="blog-title"> <label>blog name</label>
+				<input type="radio" name="which" value="tag"> <label>tag</label>
+				<input type="radio" name="which" value="blog-user"> <label>blogger</label>
 			</fieldset>
 		</form>
 	</div>

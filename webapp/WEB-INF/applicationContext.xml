@@ -47,5 +47,6 @@
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
 	
-
+	<aop:aspectj-autoproxy />
+	
 </beans>

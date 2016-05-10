@@ -36,7 +36,7 @@
 		</div>
 
 		<div id="navigation">
-			<h2>카테고리</h2>
+			<h2>Category</h2>
 			<ul>
 				<c:forEach items ="${categoryList}" var="vo" varStatus="status">	
 					<li class ="categoryButton" value = "${vo.category_id}">
@@ -48,7 +48,7 @@
 
 		<div id="footer">
 			<p>
-				<strong>Spring 이야기</strong> is powered by JBlog (c)2016
+				<strong>${UserBlog.title}</strong> is powered by JBlog (c)2016
 			</p>
 		</div>
 	</div>

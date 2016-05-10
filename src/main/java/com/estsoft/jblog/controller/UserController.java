@@ -5,6 +5,8 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.estsoft.jblog.service.UserService;
 import com.estsoft.jblog.vo.UserVo;
@@ -21,6 +24,7 @@ import com.estsoft.jblog.vo.UserVo;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	private static final Log LOG = LogFactory.getLog( UserController.class );
 	
 	@Autowired
 	private UserService userService;	
@@ -53,6 +57,19 @@ public class UserController {
 		return "/user/loginform";
 	}
 	
+	@RequestMapping(value = "/logincheck", method = RequestMethod.POST)
+	public String logincheck( @ModelAttribute @Valid UserVo vo, BindingResult result, Model model, RedirectAttributes redirectAttr ) {
+		//form valication
+		   if ( result.hasErrors() ) {
+		       model.addAllAttributes( result.getModel() );
+		       model.addAttribute("vo", vo);
+		       return "/user/loginform";}		   
+		   System.out.println("UserController 64");
+		   redirectAttr.addAttribute("email", vo.getEmail());
+		   redirectAttr.addAttribute("password", vo.getPassword());
+		   return "redirect:/user/login";
+		}
+	
 	@RequestMapping("/checkemail")
 	@ResponseBody 
 	public Map<String, Object> checkEmail(@RequestParam(value = "email", required =true, defaultValue = "") String email){
@@ -61,6 +78,6 @@ public class UserController {
 		map.put("result", "success");
 		map.put("data", vo==null);		
 		return map;
-	}
+	}	
 }
 

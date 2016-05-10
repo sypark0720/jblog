@@ -14,8 +14,8 @@
 				<li><a href="${pageContext.request.contextPath}/user/joinform">sign-up</a></li>
 			</c:when>
 			<c:otherwise>
-				<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
-				<li><a href="${pageContext.request.contextPath}/blog/${authUser.email}?sel=0">내블로그</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/logout">logout</a></li>
+				<li><a href="${pageContext.request.contextPath}/blog/${authUser.email}?sel=0">MyBlog</a></li>
 			</c:otherwise>
 		</c:choose>
 	</ul>

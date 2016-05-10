@@ -13,7 +13,7 @@
 <script type="text/javascript">
 $(function(){	
 	//logo파일 주소가 바뀌었을 때
-	$("#btn-logoupload").on('click', function(){
+	$("#fileinput").on('change', function(){
 		var form = new FormData(document.getElementById('uploadForm'));
 		if (form == ""){ return; }
 		$.ajax({
@@ -60,7 +60,7 @@ $(function(){
 			      		</tr>      		
 			      		<tr>
 			      			<td class="t">&nbsp;</td>
-			      			<td><input type="file" name="logo-file"></td> 
+			      			<td><input id = "fileinput" type="file" name="logo-file"></td> 
 			      		</tr>           				
 			      		<tr>
 			      			<td class="t">&nbsp;</td>
@@ -68,12 +68,11 @@ $(function(){
 			      		</tr>           		
 			      	</table>
 				</form>
-				<button id = "btn-logoupload">로고 변경</button>
 			</div>
 		</div>
 		<div id="footer">
 			<p>
-				<strong>Spring 이야기</strong> is powered by JBlog (c)2016
+				<strong>${authUserBlog.title}</strong> is powered by JBlog (c)2016
 			</p>
 		</div>
 	</div>

@@ -9,6 +9,8 @@
 	<properties>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework-version>4.2.1.RELEASE</org.springframework-version>
+		<jcloverslf4j.version>1.7.6</jcloverslf4j.version>		
+		<logback.version>1.1.1</logback.version>
 	</properties>
 
 
@@ -19,6 +21,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
+				<exclusions> 
+				   <exclusion>
+					  <groupId>commons-logging</groupId>
+					  <artifactId>commons-logging</artifactId>
+				   </exclusion>
+				</exclusions>
 		</dependency>
 
 		<!-- spring MVC -->
@@ -41,9 +49,20 @@
 			<version>5.1.38</version>
 		</dependency>
 
-		<!-- JSTL -->
 		<dependency>
-			<groupId>jstl</groupId>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
@@ -117,7 +136,22 @@
 		<version>1.4</version>
 	</dependency>
 	
+	<!-- logging -->
+		<dependency>                                    
+			<groupId>org.slf4j</groupId>                
+			<artifactId>jcl-over-slf4j</artifactId>     <!-- jcl을 slf4j로 넘겨주는 라이브러리 -->
+			<version>${jcloverslf4j.version}</version>  
+		</dependency>
+		
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		
 	</dependencies>
+	
+
 
 
 

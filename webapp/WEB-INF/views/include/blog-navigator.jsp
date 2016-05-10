@@ -10,11 +10,11 @@
 			<ul>
 				<c:choose>
 					<c:when test="${authUserBlog != null}">					
-						<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
-						<li><a href="${pageContext.request.contextPath}/blog/${authUser.email}/admin-basic">블로그 관리</a></li>
+						<li><a href="${pageContext.request.contextPath}/blog/logout">logout</a></li>
+						<li><a href="${pageContext.request.contextPath}/blog/${authUser.email}/admin-basic">blog-management</a></li>
 					</c:when>
 					<c:otherwise>		
-						<li><a href="${pageContext.request.contextPath}/user/loginform">로그인</a></li>
+						<li><a href="${pageContext.request.contextPath}/user/loginform">login</a></li>
 					</c:otherwise>
 				</c:choose>
 			</ul>
