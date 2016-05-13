@@ -12,7 +12,7 @@
 <Link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/jblog.css">
 	<script type="text/javascript"
-	src="/mysite3/assets/js/jquery/jquery-1.9.0.js"></script>
+	src="${pageContext.request.contextPath}/assets/js/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
 $(function(){	
 	//email 중복 체크 안했을 때

@@ -9,7 +9,7 @@
 <title>JBlog</title>
 <Link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/jblog.css">
 
-<script type = "text/javascript" src = "/mysite3/assets/js/jquery/jquery-1.9.0.js"></script>
+<script type = "text/javascript" src = "${pageContext.request.contextPath}/assets/js/jquery/jquery-1.9.0.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script type = "text/javascript">
 

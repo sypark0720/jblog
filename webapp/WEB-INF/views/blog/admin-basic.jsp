@@ -9,7 +9,7 @@
 <title>JBlog</title>
 <Link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/jblog.css">
 <script type="text/javascript"
-	src="/mysite3/assets/js/jquery/jquery-1.9.0.js"></script>
+	src="${pageContext.request.contextPath}/assets/js/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
 $(function(){	
 	//logo파일 주소가 바뀌었을 때
